@@ -1,0 +1,492 @@
+/* CSS Variables */
+:root {
+    --primary-black: #000000;
+    --primary-white: #ffffff;
+    --secondary-yellow: #ffcc00;
+    --transition-speed: 0.3s;
+    --header-height: 60px;
+    --font-size-base: clamp(14px, 2vw, 16px);
+    --max-width-container: 1200px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    background-color: var(--primary-black);
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+    z-index: 100;
+}
+
+.logo img {
+    width: 40px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: clamp(1rem, 2vw, 2rem);
+}
+
+.navbar a.nav-link {
+    color: var(--primary-white);
+    text-decoration: none;
+    font-size: 1.5rem; 
+    transition: color var(--transition-speed), transform var(--transition-speed);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.navbar a.nav-link:hover,
+.navbar a.nav-link.active {
+    color: var(--secondary-yellow);
+    transform: scale(1.2);
+}
+
+#cart-count {
+    background-color: var(--secondary-yellow);
+    color: var(--primary-black);
+    font-size: 0.8rem;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+/* Courses Hero Section */
+.courses-hero {
+    position: relative;
+    background-color: #f5f5f5;
+    /* padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 3vw, 2rem); */
+    
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+}
+
+.hero-content {
+    max-width: var(--max-width-container);
+    width: 90%;
+}
+
+.courses-hero h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: clamp(0.5rem, 2vw, 1rem);
+}
+
+.courses-hero p {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    color: #666;
+}
+
+/* Search Section */
+.courses-search {
+    padding: clamp(1rem, 3vw, 2rem);
+    background-color: var(--primary-white);
+    text-align: center;
+}
+
+.search-container {
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#search-input {
+    padding: 0.8rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color var(--transition-speed);
+}
+
+#search-input:focus {
+    border-color: var(--secondary-yellow);
+}
+
+#search-btn {
+    background-color: var(--secondary-yellow);
+    color: var(--primary-black);
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+#search-btn:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Courses Preview Section */
+.courses-preview {
+    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
+    text-align: center;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    width: 90%;
+}
+
+.course-card {
+    background-color: var(--primary-white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform var(--transition-speed);
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.course-card h3 {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    padding: 1rem 1rem 0.5rem;
+    color: var(--primary-black);
+}
+
+.course-card .instructor {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    padding: 0 1rem;
+    color: #666;
+}
+
+.course-card .price {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    padding: 0.5rem 1rem 1rem;
+    color: var(--secondary-yellow);
+    font-weight: bold;
+}
+
+.course-card .add-to-cart {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: var(--secondary-yellow);
+    padding: 0.5rem;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    color: var(--primary-black);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+    z-index: 2;
+}
+
+.course-card .add-to-cart:hover {
+    background-color: var(--primary-black);
+    color: var(--secondary-yellow);
+    transform: scale(1.2);
+}
+
+.course-card .like-button {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    background-color: transparent;
+    padding: 0.5rem;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform var(--transition-speed);
+    z-index: 2;
+}
+
+.course-card .like-button i {
+    color: var(--primary-black);
+    transition: color var(--transition-speed);
+}
+
+.course-card .like-button.liked i {
+    color: red;
+}
+
+.course-card .like-button:hover {
+    transform: scale(1.2);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
+    text-align: center;
+}
+
+.footer-content {
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
+    width: 90%;
+}
+
+.footer-section h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-bottom: clamp(0.5rem, 1vw, 1rem);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: color var(--transition-speed);
+}
+
+.footer-section a:hover {
+    color: var(--secondary-yellow);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.social-links a {
+    color: var(--primary-white);
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.social-links a:hover {
+    color: var(--secondary-yellow);
+    transform: scale(1.1);
+}
+
+.footer-section p {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .navbar ul {
+        gap: clamp(0.8rem, 1.5vw, 1rem);
+    }
+
+    .courses-hero {
+        min-height: 25vh;
+    }
+
+    .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar a.nav-link {
+        font-size: 1.2rem;
+    }
+
+    .courses-hero {
+        padding: clamp(2rem, 4vw, 3rem) clamp(0.5rem, 2vw, 1rem);
+        min-height: 20vh;
+    }
+
+    .course-card img {
+        height: 120px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0 clamp(0.5rem, 1.5vw, 1rem);
+    }
+
+    .logo img {
+        width: 35px;
+    }
+
+    .navbar a.nav-link {
+        font-size: 1rem;
+        padding: 0.3rem;
+    }
+
+    #cart-count {
+        font-size: 0.6rem;
+        width: 16px;
+        height: 16px;
+    }
+
+    .courses-hero h1 {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+    }
+
+    .courses-hero p {
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #search-input {
+        width: 100%;
+    }
+
+    #search-btn {
+        padding: 0.6rem 1rem;
+    }
+
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .course-card img {
+        height: 100px;
+    }
+
+    .course-card .add-to-cart,
+    .course-card .like-button {
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+
+    .footer-section h3 {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar a.nav-link {
+        font-size: 0.9rem;
+    }
+
+    .courses-hero {
+        padding: clamp(1.5rem, 3vw, 2rem) clamp(0.5rem, 1.5vw, 0.8rem);
+        min-height: 15vh;
+    }
+
+    .courses-hero h1 {
+        font-size: clamp(1rem, 3.5vw, 1.2rem);
+    }
+
+    .courses-hero p {
+        font-size: clamp(0.7rem, 1.8vw, 0.8rem);
+    }
+
+    .social-links a {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+}
+
+/* Courses Filter Section */
+.courses-filter {
+    padding: clamp(1rem, 3vw, 2rem);
+    background-color: var(--primary-white);
+    text-align: center;
+}
+
+.filter-container {
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 1rem);
+    flex-wrap: wrap;
+}
+
+.filter-container select {
+    padding: 0.8rem;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    width: 100%;
+    max-width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color var(--transition-speed);
+}
+
+.filter-container select:focus {
+    border-color: var(--secondary-yellow);
+}
+
+/* Update course card details */
+.course-card .details {
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    padding: 0 1rem;
+    color: #888;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .filter-container select {
+        max-width: 100%;
+    }
+}

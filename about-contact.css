@@ -1,0 +1,318 @@
+/* CSS Variables */
+:root {
+    --primary-black: #000000;
+    --primary-white: #ffffff;
+    --secondary-yellow: #ffcc00;
+    --transition-speed: 0.3s;
+    --header-height: 60px;
+    --font-size-base: clamp(14px, 2vw, 16px);
+    --max-width-container: 1200px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    background-color: var(--primary-black);
+    position: sticky;
+    top: 0;
+    height: var(--header-height);
+    z-index: 100;
+}
+
+.logo img {
+    width: 40px;
+    height: auto;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: clamp(1rem, 2vw, 2rem);
+}
+
+.navbar a.nav-link {
+    color: var(--primary-white);
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    position: relative;
+}
+
+.navbar a.nav-link:hover,
+.navbar a.nav-link.active {
+    color: var(--secondary-yellow);
+    transform: scale(1.2);
+}
+
+#cart-count {
+    background-color: var(--secondary-yellow);
+    color: var(--primary-black);
+    font-size: 0.8rem;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+/* About and Contact Section */
+.about,
+.contact {
+    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    width: 90%;
+}
+
+.about-container,
+.contact-container {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: clamp(1rem, 2vw, 2rem);
+}
+
+.about-container h1,
+.contact-container h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--primary-black);
+    text-align: center;
+    margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+.about-content,
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 2rem);
+}
+
+.about-section,
+.contact-section {
+    background-color: var(--primary-white);
+    border-radius: 8px;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform var(--transition-speed);
+}
+
+.about-section:hover,
+.contact-section:hover {
+    transform: translateY(-5px);
+}
+
+.about-section h2,
+.contact-section h2 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    color: var(--primary-black);
+    margin-bottom: clamp(0.5rem, 1vw, 1rem);
+}
+
+.about-section p,
+.contact-section p {
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: #666;
+}
+
+.contact-section p i {
+    color: var(--secondary-yellow);
+    margin-right: 0.5rem;
+}
+
+.contact-section p a {
+    color: var(--primary-black);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+.contact-section p a:hover {
+    color: var(--secondary-yellow);
+}
+
+.contact-section .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.contact-section .social-links a {
+    color: var(--primary-black);
+    text-decoration: none;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.contact-section .social-links a:hover {
+    color: var(--secondary-yellow);
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 3vw, 2rem);
+    text-align: center;
+}
+
+.footer-content {
+    max-width: var(--max-width-container);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
+    width: 90%;
+}
+
+.footer-section h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    margin-bottom: clamp(0.5rem, 1vw, 1rem);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: color var(--transition-speed);
+}
+
+.footer-section a:hover {
+    color: var(--secondary-yellow);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.footer-section .social-links a {
+    color: var(--primary-white);
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    transition: color var(--transition-speed), transform var(--transition-speed);
+}
+
+.footer-section .social-links a:hover {
+    color: var(--secondary-yellow);
+    transform: scale(1.1);
+}
+
+.footer-section p {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: #ccc;
+}
+
+.footer-section .mission {
+    font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+    color: #bbb;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .about-content,
+    .contact-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar a.nav-link {
+        font-size: 1.2rem;
+    }
+
+    .about-container h1,
+    .contact-container h1 {
+        font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+    }
+
+    .about-section h2,
+    .contact-section h2 {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0 clamp(0.5rem, 1.5vw, 1rem);
+    }
+
+    .logo img {
+        width: 35px;
+    }
+
+    .navbar a.nav-link {
+        font-size: 1rem;
+        padding: 0.3rem;
+    }
+
+    #cart-count {
+        font-size: 0.6rem;
+        width: 16px;
+        height: 16px;
+    }
+
+    .about-section p,
+    .contact-section p {
+        font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    }
+
+    .contact-section .social-links a {
+        font-size: clamp(0.8rem, 1.8vw, 0.9rem);
+    }
+
+    .footer-section h3 {
+        font-size: clamp(1rem, 2vw, 1.2rem);
+    }
+}
+
+@media (max-width: 320px) {
+    .navbar a.nav-link {
+        font-size: 0.9rem;
+    }
+
+    .about-container h1,
+    .contact-container h1 {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+
+    .social-links a {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+    }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Online Tutorial Website</title>
+    <link rel="stylesheet" href="checkout.css">
+    <script src="https://kit.fontawesome.com/6b4ba4da31.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="https://img.freepik.com/free-vector/vector-education-logo_779267-2083.jpg?t=st=1743519855~exp=1743523455~hmac=68d00c0878931d9d3883aca8c8097e8ac824c766a7112352295cb597cf68b2d0&w=2000" alt="Logo">
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="courses.html" class="nav-link" title="Courses"><i class="fa-solid fa-book"></i></a></li>
+                <li><a href="liked.html" class="nav-link" title="Liked"><i class="fa-solid fa-heart"></i></a></li>
+                <li>
+                    <a href="cart.html" class="nav-link" title="Cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count">0</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="nav-link" title="Profile">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="checkout">
+        <h1>Checkout</h1>
+        <div id="checkout-summary"></div>
+        <p>Total Amount: <span id="total-amount">$0.00</span></p>
+        <form id="payment-form">
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+        
+            <label for="expiry-date">Expiry Date</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+        
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" placeholder="123" required>
+        
+            <button type="submit">Pay Now</button>
+        </form>
+        
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="mailto:support@codemasterhub.com">Support Email</a>
+            </div>
+            <div class="footer-section">
+                <p>© 2025 Online Tutorial. All rights reserved.</p>
+                <p class="mission">Empowering learners with coding skills for the future.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="checkout.js"></script>
+</body>
+</html>

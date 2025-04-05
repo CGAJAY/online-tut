@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - Online Tutorial Website</title>
+    <link rel="stylesheet" href="cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="https://img.freepik.com/free-vector/vector-education-logo_779267-2083.jpg?t=st=1743519855~exp=1743523455~hmac=68d00c0878931d9d3883aca8c8097e8ac824c766a7112352295cb597cf68b2d0&w=2000" alt="Logo">
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="courses.html" class="nav-link" title="Courses">
+                        <i class="fa-solid fa-book"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="liked.html" class="nav-link" title="Liked">
+                        <i class="fa-solid fa-heart"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html" class="nav-link" title="Cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cart-count">3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html" class="nav-link" title="Profile">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="about.html" class="nav-link" title="About">
+                        <i class="fa-solid fa-info-circle"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="contact.html" class="nav-link" title="Contact">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="cart">
+        <h1>Your Cart</h1>
+        <div class="cart-items">
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="https://img.freepik.com/free-photo/laptop-with-code-screen_23-2148431988.jpg" alt="Frontend Development with React">
+                </div>
+                <div class="cart-item-details">
+                    <h3>Frontend Development with React</h3>
+                    <p class="price">$59.99</p>
+                    <div class="cart-item-controls">
+                        <button class="decrement-btn">-</button>
+                        <span class="quantity">2</span>
+                        <button class="increment-btn">+</button>
+                        <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="https://images.unsplash.com/photo-1649180556628-9ba704115795" alt="Python for Beginners">
+                </div>
+                <div class="cart-item-details">
+                    <h3>Python for Beginners</h3>
+                    <p class="price">$44.99</p>
+                    <div class="cart-item-controls">
+                        <button class="decrement-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increment-btn">+</button>
+                        <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="https://img.freepik.com/free-photo/programming-background-with-person-working-with-codes-computer_23-2150010127.jpg" alt="Java Fundamentals">
+                </div>
+                <div class="cart-item-details">
+                    <h3>Java Fundamentals</h3>
+                    <p class="price">$54.99</p>
+                    <div class="cart-item-controls">
+                        <button class="decrement-btn">-</button>
+                        <span class="quantity">1</span>
+                        <button class="increment-btn">+</button>
+                        <button class="delete-btn"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-summary">
+            <p>Total Items: 3</p>
+            <p class="total">Total Price: $159.97</p>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <a href="mailto:support@codemasterhub.com">Support Email</a>
+            </div>
+            <div class="footer-section">
+                <p>© 2025 Online Tutorial. All rights reserved.</p>
+                <p class="mission">Empowering learners with coding skills for the future.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
