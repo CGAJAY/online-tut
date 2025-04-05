@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Online Tutorial Website</title>
-    <link rel="stylesheet" href="about-contact.css">
+    <link rel="stylesheet" href="contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -14,37 +14,12 @@
         </a>
         <nav class="navbar">
             <ul>
-                <li>
-                    <a href="courses.html" class="nav-link" title="Courses">
-                        <i class="fa-solid fa-book"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="liked.html" class="nav-link" title="Liked">
-                        <i class="fa-solid fa-heart"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="cart.html" class="nav-link" title="Cart">
-                        <i class="fa-solid fa-cart-shopping"></i>
-                        <span id="cart-count">3</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="profile.html" class="nav-link" title="Profile">
-                        <i class="fa-solid fa-user"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="about.html" class="nav-link" title="About">
-                        <i class="fa-solid fa-info-circle"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="contact.html" class="nav-link" title="Contact">
-                        <i class="fa-solid fa-envelope"></i>
-                    </a>
-                </li>
+                <li><a href="courses.html" class="nav-link" title="Courses"><i class="fa-solid fa-book"></i></a></li>
+                <li><a href="liked.html" class="nav-link" title="Liked"><i class="fa-solid fa-heart"></i></a></li>
+                <li><a href="cart.html" class="nav-link" title="Cart"><i class="fa-solid fa-cart-shopping"></i><span id="cart-count">3</span></a></li>
+                <li><a href="profile.html" class="nav-link" title="Profile"><i class="fa-solid fa-user"></i></a></li>
+                <li><a href="about.html" class="nav-link" title="About"><i class="fa-solid fa-info-circle"></i></a></li>
+                <li><a href="contact.html" class="nav-link" title="Contact"><i class="fa-solid fa-envelope"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -52,29 +27,25 @@
     <section class="contact">
         <div class="contact-container">
             <h1>Contact Us</h1>
-            <div class="contact-content">
-                <div class="contact-section">
-                    <h2>Get in Touch</h2>
-                    <p>We’d love to hear from you! Whether you have questions, feedback, or need support, feel free to reach out.</p>
+            <form action="submit_form.php" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 </div>
-                <div class="contact-section">
-                    <h2>Contact Information</h2>
-                    <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:support@codemasterhub.com">support@onlinetut.com</a></p>
-                    <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> +1 (555) 123-4567</p>
-                    <p><i class="fa-solid fa-map-marker-alt"></i> <strong>Address:</strong> 123 Learning Lane, Tech City, TC 45678</p>
+                <div class="form-group">
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
-                <div class="contact-section">
-                    <h2>Follow Us</h2>
-                    <div class="social-links">
-                        <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
-                        <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-twitter"></i> Twitter</a>
-                        <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                    </div>
+                <div class="form-group">
+                    <label for="message">Your Message:</label>
+                    <textarea id="message" name="message" placeholder="Enter your message" rows="5" required></textarea>
                 </div>
-            </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
         </div>
     </section>
 
+  
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
